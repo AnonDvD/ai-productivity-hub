@@ -81,7 +81,7 @@ export function EmailGenerator() {
             <Label htmlFor="tone">Tone</Label>
             <Select value={tone} onValueChange={(value) => setTone(value as Tone)}>
               <SelectTrigger id="tone" className="bg-surface">
-                <SelectValue />
+                <SelectValue placeholder="Formal">{tone}</SelectValue>
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="Formal">Formal</SelectItem>
