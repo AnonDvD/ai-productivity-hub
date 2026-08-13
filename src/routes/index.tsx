@@ -37,9 +37,16 @@ export const Route = createFileRoute("/")({
   component: Dashboard,
 });
 
-type ToolId = "email" | "summary" | "chat";
+type ToolId = "overview" | "email" | "summary" | "chat";
 
 const TOOLS = [
+  {
+    id: "overview" as ToolId,
+    label: "Dashboard",
+    icon: LayoutDashboard,
+    title: "Dashboard",
+    blurb: "Quick links to every tool plus your recent activity this session.",
+  },
   {
     id: "email" as ToolId,
     label: "Email Generator",
@@ -64,7 +71,7 @@ const TOOLS = [
 ];
 
 function Dashboard() {
-  const [active, setActive] = useState<ToolId>("email");
+  const [active, setActive] = useState<ToolId>("overview");
   const [mobileOpen, setMobileOpen] = useState(false);
   const current = TOOLS.find((tool) => tool.id === active)!;
 
