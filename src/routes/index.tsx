@@ -1,9 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Mail, ListChecks, MessagesSquare, Menu, ShieldAlert } from "lucide-react";
+import {
+  LayoutDashboard,
+  Mail,
+  ListChecks,
+  MessagesSquare,
+  Menu,
+  ShieldAlert,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
+import { Overview } from "@/components/dashboard/Overview";
 import { EmailGenerator } from "@/components/dashboard/EmailGenerator";
 import { MeetingSummarizer } from "@/components/dashboard/MeetingSummarizer";
 import { ChatAssistant } from "@/components/dashboard/ChatAssistant";
