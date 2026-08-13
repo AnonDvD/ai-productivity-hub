@@ -28,8 +28,7 @@ export function ChatAssistant() {
 
   const isBusy = status === "submitted" || status === "streaming";
 
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
+  const handleSubmit = () => {
     if (!input.trim() || isBusy) return;
     void sendMessage({ text: input.trim() });
     setInput("");
