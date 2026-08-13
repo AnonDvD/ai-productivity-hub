@@ -36,6 +36,7 @@ export function EmailGenerator() {
     try {
       const result = await run({ data: { context, keyPoints, tone } });
       setOutput(result.text);
+      logActivity("email", `${tone} email drafted — ${context.trim().slice(0, 48)}`);
     } catch (error) {
       const message = error instanceof Error ? error.message : "Something went wrong";
       toast.error(
