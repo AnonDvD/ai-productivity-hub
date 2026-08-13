@@ -16,6 +16,7 @@ import {
   PromptInputTextarea,
 } from "@/components/ai-elements/prompt-input";
 import { Shimmer } from "@/components/ai-elements/shimmer";
+import { logActivity } from "@/lib/activity";
 import assistantMark from "@/assets/assistant-mark.png";
 
 export function ChatAssistant() {
@@ -30,7 +31,9 @@ export function ChatAssistant() {
 
   const handleSubmit = () => {
     if (!input.trim() || isBusy) return;
-    void sendMessage({ text: input.trim() });
+    const text = input.trim();
+    void sendMessage({ text });
+    logActivity("chat", `Chat: ${text.slice(0, 48)}`);
     setInput("");
   };
 

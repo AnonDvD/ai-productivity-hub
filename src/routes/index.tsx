@@ -1,9 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Mail, ListChecks, MessagesSquare, Menu, ShieldAlert } from "lucide-react";
+import {
+  LayoutDashboard,
+  Mail,
+  ListChecks,
+  MessagesSquare,
+  Menu,
+  ShieldAlert,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
+import { Overview } from "@/components/dashboard/Overview";
 import { EmailGenerator } from "@/components/dashboard/EmailGenerator";
 import { MeetingSummarizer } from "@/components/dashboard/MeetingSummarizer";
 import { ChatAssistant } from "@/components/dashboard/ChatAssistant";
@@ -29,9 +37,16 @@ export const Route = createFileRoute("/")({
   component: Dashboard,
 });
 
-type ToolId = "email" | "summary" | "chat";
+type ToolId = "overview" | "email" | "summary" | "chat";
 
 const TOOLS = [
+  {
+    id: "overview" as ToolId,
+    label: "Dashboard",
+    icon: LayoutDashboard,
+    title: "Dashboard",
+    blurb: "Quick links to every tool plus your recent activity this session.",
+  },
   {
     id: "email" as ToolId,
     label: "Email Generator",
@@ -56,7 +71,7 @@ const TOOLS = [
 ];
 
 function Dashboard() {
-  const [active, setActive] = useState<ToolId>("email");
+  const [active, setActive] = useState<ToolId>("overview");
   const [mobileOpen, setMobileOpen] = useState(false);
   const current = TOOLS.find((tool) => tool.id === active)!;
 
@@ -157,6 +172,7 @@ function Dashboard() {
               <p className="text-sm text-muted-foreground">{current.blurb}</p>
             </div>
 
+            {active === "overview" ? <Overview onNavigate={setActive} /> : null}
             {active === "email" ? <EmailGenerator /> : null}
             {active === "summary" ? <MeetingSummarizer /> : null}
             {active === "chat" ? <ChatAssistant /> : null}

@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { summarizeNotes } from "@/lib/ai.functions";
+import { logActivity } from "@/lib/activity";
 import { OutputPanel } from "./OutputPanel";
 
 export function MeetingSummarizer() {
@@ -23,6 +24,7 @@ export function MeetingSummarizer() {
     try {
       const result = await run({ data: { notes } });
       setOutput(result.text);
+      logActivity("summary", `Meeting notes summarized (${notes.trim().split(/\s+/).length} words)`);
     } catch (error) {
       const message = error instanceof Error ? error.message : "Something went wrong";
       toast.error(
