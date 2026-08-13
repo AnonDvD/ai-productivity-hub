@@ -24,6 +24,7 @@ export function MeetingSummarizer() {
     try {
       const result = await run({ data: { notes } });
       setOutput(result.text);
+      logActivity("summary", `Meeting notes summarized (${notes.trim().split(/\s+/).length} words)`);
     } catch (error) {
       const message = error instanceof Error ? error.message : "Something went wrong";
       toast.error(
