@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { summarizeNotes } from "@/lib/ai.functions";
+import { logActivity } from "@/lib/activity";
 import { OutputPanel } from "./OutputPanel";
 
 export function MeetingSummarizer() {
