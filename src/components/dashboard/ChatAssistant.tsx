@@ -31,7 +31,9 @@ export function ChatAssistant() {
 
   const handleSubmit = () => {
     if (!input.trim() || isBusy) return;
-    void sendMessage({ text: input.trim() });
+    const text = input.trim();
+    void sendMessage({ text });
+    logActivity("chat", `Chat: ${text.slice(0, 48)}`);
     setInput("");
   };
 
