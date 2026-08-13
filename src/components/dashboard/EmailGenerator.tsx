@@ -14,6 +14,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { generateEmail } from "@/lib/ai.functions";
+import { logActivity } from "@/lib/activity";
 import { OutputPanel } from "./OutputPanel";
 
 type Tone = "Formal" | "Friendly" | "Persuasive";
