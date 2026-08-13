@@ -172,6 +172,7 @@ function Dashboard() {
               <p className="text-sm text-muted-foreground">{current.blurb}</p>
             </div>
 
+            {active === "overview" ? <Overview onNavigate={setActive} /> : null}
             {active === "email" ? <EmailGenerator /> : null}
             {active === "summary" ? <MeetingSummarizer /> : null}
             {active === "chat" ? <ChatAssistant /> : null}
