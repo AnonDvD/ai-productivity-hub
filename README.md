@@ -1,68 +1,57 @@
-# AI Productivity Hub
+# AI Workplace Productivity Assistant
 
-Build a modern, responsive web app called "AI Workplace Productivity Assistant" — a SaaS-style dashboard that helps professionals automate workplace tasks using AI. No backend or database needed (no user data is stored); all AI outputs are generated live and editable in-session only.
+## Project Overview
 
-Layout:
+**AI Workplace Productivity Assistant** is a modern, responsive web application designed to help professionals automate common workplace tasks using AI. Built as a single-page SaaS-style dashboard, the app brings together three core productivity tools — email generation, meeting notes summarization, and an AI chat assistant — into one clean, easy-to-use interface.
 
-Sidebar navigation (collapsible on mobile) with 3 sections: Email Generator, Meeting Summarizer, AI Chat Assistant
+The application is fully frontend-based with no backend or database, meaning no user data is stored or persisted beyond the current browser session. All AI processing happens live, and outputs are editable before use.
 
-Clean dashboard-style main content area
+## Features Implemented
 
-Fully responsive (desktop, tablet, mobile)
+### Smart Email Generator
+- Generates professional emails based on recipient context and key points
+- Supports multiple tone options: **Formal**, **Friendly**, and **Persuasive**
+- Output is fully editable with a one-click copy button
 
-Feature 1 — Smart Email Generator:
+### Meeting Notes Summarizer
+- Accepts pasted, unstructured meeting notes
+- Uses structured AI prompts to extract and organize:
+  - Action Items
+  - Decisions Made
+  - Deadlines
+- Editable summary output with copy functionality
 
-Input fields: recipient/context, key points, tone selector (Formal, Friendly, Persuasive)
+### AI Chatbot Interface
+- Interactive chat-style assistant for general workplace queries
+- Real-time message exchange with a clean bubble-style UI
+- Chat history persists only for the active session (not stored)
 
-Structured prompt sent to AI generates a complete professional email
+### UI/UX
+- Modern dashboard layout with collapsible sidebar navigation
+- Fully responsive design (desktop, tablet, and mobile)
+- Custom, professional color palette distinct from typical SaaS defaults
+- Consistent card-based layout with clear typography hierarchy
 
-Output shown in an editable text box with a "Copy" button
+### Responsible AI Disclaimer
+- Persistent footer/notice reminding users that AI-generated content should be reviewed before use
 
-Feature 2 — Meeting Notes Summarizer:
+## Technologies and Tools Used
 
-Large textarea for pasting raw meeting notes
+| Category | Tool/Technology |
+|---|---|
+| Development Platform | Lovable.ai (AI-assisted app builder) |
+| Frontend Framework | React |
+| Styling | Tailwind CSS |
+| AI Integration | LLM API (prompt-based generation) |
+| Hosting/Deployment | Lovable.ai hosting |
+| Version Control | Git / GitHub |
 
-AI returns a structured summary broken into 3 clear sections: Action Items, Decisions Made, Deadlines
+> **Note:** No backend server or database is used. All AI requests are handled client-side per session, and no user data is retained.
 
-Output editable, with a "Copy" button
+## Setup Instructions
 
-Feature 3 — AI Chatbot Interface:
+### Run via Lovable.ai
+1. Open the project link shared via Lovable.ai
+2. Click **Preview** to launch the app directly in-browser
+3. No installation required — the app runs entirely in the Lovable environment
 
-Simple chat UI (message bubbles, input box, send button)
-
-Chat history persists only for the current session (no storage)
-
-Design:
-
-Modern, clean, professional SaaS aesthetic
-
-Unique but tasteful color palette (not default blue/white — something distinctive, used sparingly for accents)
-
-Consistent spacing, rounded cards, subtle shadows, good typography hierarchy
-
-Other requirements:
-
-Small "Responsible AI" disclaimer footer/note (e.g., "AI-generated content may require review before use")
-
-No login, no database, no backend — frontend only, AI calls handled client-side per session
-
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/5dc2b054-398d-4f31-9039-c4260a33449e).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
