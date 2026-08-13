@@ -16,6 +16,7 @@ import {
   PromptInputTextarea,
 } from "@/components/ai-elements/prompt-input";
 import { Shimmer } from "@/components/ai-elements/shimmer";
+import { logActivity } from "@/lib/activity";
 import assistantMark from "@/assets/assistant-mark.png";
 
 export function ChatAssistant() {
