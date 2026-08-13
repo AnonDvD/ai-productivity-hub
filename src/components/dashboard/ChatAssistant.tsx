@@ -59,9 +59,7 @@ export function ChatAssistant() {
                 <Message key={message.id} from={message.role}>
                   <MessageContent
                     className={
-                      message.role === "user"
-                        ? "bg-primary text-primary-foreground"
-                        : "bg-transparent p-0 text-foreground"
+                      message.role === "assistant" ? "bg-transparent p-0 text-foreground" : undefined
                     }
                   >
                     {message.role === "assistant" ? (
